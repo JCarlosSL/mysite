@@ -1,0 +1,23 @@
+{% extends 'blog/base.html'%}
+
+{% block content %}
+{% for post in posts %}
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary"><a href="{% url 'post_detail' pk=post.pk %}"> {{ post.title }}</a></h6>
+                </div>
+                <div class="card-body">
+                  <div style="padding: 20px;" >
+                    <center >
+			{% if post.imagen %}
+			
+	    	<img  src="{{ post.imagen.url}}" style="max-height: 100%; max-width: 100%">
+        	{% endif %}
+        	<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+			  </center>
+                  </div>
+                </div>
+              </div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="row">
+	<a class="btn btn-default" href="{% url 'post_thresholding' pk=post.pk %}"><span> threshold</span></a>
+	<a class="btn btn-default" href="{% url 'post_contrast' pk=post.pk %}"><span> contrast</span></a>
+	<a class="btn btn-default" href="{% url 'post_equalizer' pk=post.pk %}"><span> EcualizadorHist</span></a>
+	<a class="btn btn-default" href="{% url 'post_logaritmo' pk=post.pk %}"><span> logaritmo</span></a>
+	<a class="btn btn-default" href="{% url 'post_raiz' pk=post.pk %}"><span> raiz</span></a>
+	<a class="btn btn-default" href="{% url 'post_exponencial' pk=post.pk %}"><span> exponencial</span></a>
+	<a class="btn btn-default" href="{% url 'post_raizpower' pk=post.pk %}"><span> raiozpower</span></a>
+	<a class="btn btn-default" href="{% url 'post_adicion' pk=post.pk %}"><span> adicion</span></a>
+	<a class="btn btn-default" href="{% url 'post_sustraccion' pk=post.pk %}"><span>sustraccion</span></a>
+	<a class="btn btn-default" href="{% url 'post_multiplicacion' pk=post.pk %}"><span> multiplicacion</span></a>
+	<a class="btn btn-default" href="{% url 'post_division' pk=post.pk %}"><span> division</span></a>
+	<a class="btn btn-default" href="{% url 'post_blending' pk=post.pk %}"><span> blending</span></a>
+	<a class="btn btn-default" href="{% url 'post_not' pk=post.pk %}"><span> not</span></a>
+	<a class="btn btn-default" href="{% url 'post_and' pk=post.pk %}"><span> and</span></a>
+	<a class="btn btn-default" href="{% url 'post_or' pk=post.pk %}"><span> or</span></a>
+	<a class="btn btn-default" href="{% url 'post_xor' pk=post.pk %}"><span> xor</span></a>
+</div>
+<div class="row">
+    <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Imagen Original</h6>
+                </div>
+                <div class="card-body">
+                  <div style="padding: 20px;">
+                    <center>
+			{% if post.imagen %}
+			
+	    	<img src="{{ post.imagen.url}}" style="max-height: 100%; max-width: 100%">
+        	{% endif %}
+			  </center>
+                  </div>
+                </div>
+              </div>
+</div>
+
+{% endblock %}
